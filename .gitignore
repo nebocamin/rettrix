@@ -1,0 +1,12 @@
+# Local config and secrets
+rettrix.toml
+matrix-password
+identity
+.rettrix/
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
