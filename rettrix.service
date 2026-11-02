@@ -1,0 +1,20 @@
+# systemd unit for rettrix. Adjust User and the /opt/rettrix paths, then:
+#   sudo cp rettrix.service /etc/systemd/system/
+#   sudo systemctl daemon-reload && sudo systemctl enable --now rettrix
+#   journalctl -u rettrix -f
+[Unit]
+Description=rettrix: Matrix <-> Reticulum group chat bridge
+After=network-online.target rnsd.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+# The user running rnsd, so rettrix uses its shared Reticulum instance
+User=rettrix
+WorkingDirectory=/opt/rettrix
+ExecStart=/opt/rettrix/venv/bin/python rettrix.py -c rettrix.toml
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

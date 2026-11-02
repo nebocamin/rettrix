@@ -1,0 +1,35 @@
+# rettrix: Matrix room <-> Reticulum group chat (fwdsvc). Copy to rettrix.toml.
+
+[matrix]
+homeserver = "https://matrix.example.org"
+# Its own account, not the account of a relay bot such as a MeshCore bridge: a bridge
+# ignores the messages of its own account, so group messages posted by a
+# shared account wouldn't reach the other network.
+user = "@rettrix:example.org"
+# Password: environment variable RETTRIX_MATRIX_PASSWORD, or this file (chmod 600)
+password_file = "~/.rettrix/matrix-password"
+# Internal room ID (Element: Room settings > Advanced), not the alias
+room = "!AbCdEfGhIjKlMnOpQr:example.org"
+
+# Bots posting for other networks: their prefix is dropped and the label
+# shown instead of the bot's name ("[matrix] MeshCore: alice: hello").
+[matrix.relay_bots."@mcbridge:example.org"]
+prefix = "[McBridge] "
+label = "MeshCore"
+
+[group]
+# LXMF address of the group chat (fwdsvc "delivery destination")
+address = "00112233445566778899aabbccddeeff"
+# Shown in the group as "[matrix] bob: hi" (1-24 of A-Z a-z 0-9 _ -)
+nick = "matrix"
+# Seconds between messages to the group (LoRa members share the airtime)
+min_interval = 2.0
+
+[reticulum]
+# The bridge's LXMF identity and LXMF state
+storage = "~/.rettrix"
+# Shown in the bridge's announces
+display_name = "Matrix bridge"
+# Reticulum config directory of the local rnsd (default: as rnsd finds it,
+# /etc/reticulum, ~/.config/reticulum or ~/.reticulum of this user)
+# configdir = "/home/rettrix/.reticulum"
