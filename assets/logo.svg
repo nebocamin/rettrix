@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="rettrix logo: a mesh network inside Matrix-style brackets">
+  <title>rettrix</title>
+  <rect width="256" height="256" rx="48" fill="#111827"/>
+  <!-- Matrix: brackets -->
+  <g fill="none" stroke="#0dbd8b" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M80 48H48V208H80"/>
+    <path d="M176 48H208V208H176"/>
+  </g>
+  <!-- Reticulum: mesh -->
+  <g stroke="#94a3b8" stroke-width="4" stroke-linecap="round">
+    <path d="M100 92L156 80M100 92L128 130M156 80L128 130M128 130L98 174M128 130L158 172M98 174L158 172M100 92L98 174M156 80L158 172"/>
+  </g>
+  <g fill="#e5e7eb">
+    <circle cx="100" cy="92" r="9"/>
+    <circle cx="156" cy="80" r="9"/>
+    <circle cx="98" cy="174" r="9"/>
+    <circle cx="158" cy="172" r="9"/>
+  </g>
+  <circle cx="128" cy="130" r="13" fill="#f59e0b"/>
+</svg>

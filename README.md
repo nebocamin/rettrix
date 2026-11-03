@@ -1,4 +1,8 @@
-# rettrix
+<p align="center">
+  <img src="assets/logo.svg" alt="rettrix logo" width="128" height="128">
+</p>
+
+<h1 align="center">rettrix</h1>
 
 A bridge between a [Matrix](https://matrix.org) room and a
 [Reticulum](https://reticulum.network) group chat.
